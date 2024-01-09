@@ -1,16 +1,15 @@
-import React, { useState } from 'react'
+import React from "react";
+import Highorder from "./Highorder";
 
-export default function LikePost() {
-
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
-
+function LikePost(props) {
+  const { likeImageCounter, handleLikeImageCount } = props;
   return (
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+      <button onClick={handleLikeImageCount}>
+        Like Post - {likeImageCounter}
+      </button>
     </div>
-  )
+  );
 }
+
+export default Highorder(LikePost);
